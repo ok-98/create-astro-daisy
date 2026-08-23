@@ -1,0 +1,23 @@
+{
+  "name": "create-astro-daisy",
+  "version": "0.1.0",
+  "description": "npm create astro-daisy: scaffold an Astro project pre-wired with Tailwind CSS and daisyUI",
+  "type": "module",
+  "bin": {
+    "create-astro-daisy": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "tailwindcss",
+    "daisyui",
+    "create-astro",
+    "npm-create"
+  ]
+}
