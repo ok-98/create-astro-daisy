@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - run: node --check index.mjs
+
+      - name: Scaffold a project and verify Tailwind/daisyUI wiring
+        run: |
+          mkdir /tmp/smoke-test && cd /tmp/smoke-test
+          node "$GITHUB_WORKSPACE/index.mjs" app --template minimal --install --no-git --yes --framework none --mcp none
+          grep -q '@import "tailwindcss";' app/src/styles/global.css
+          grep -q '@plugin "daisyui";' app/src/styles/global.css
+          grep -q '"daisyui"' app/package.json

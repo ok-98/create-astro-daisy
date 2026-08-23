@@ -18,6 +18,15 @@
     "node": ">=18.18.0"
   },
   "license": "MIT",
+  "author": "Kacper Olszanski",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ok-98/create-astro-daisy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ok-98/create-astro-daisy/issues"
+  },
+  "homepage": "https://github.com/ok-98/create-astro-daisy#readme",
   "keywords": [
     "astro",
     "tailwindcss",
